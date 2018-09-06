@@ -55,7 +55,7 @@ canvas.create_line(250, f, 500, 320, fill="cyan")
 
 canvas.create_rectangle(0, 0, 500, hl-1, fill="black")
 
-# Horizontal highlightthickness
+# Horizontal lines
 i = 300
 x = 2
 
@@ -64,13 +64,14 @@ while (i<600):
     i = i + x
     x = pow(x, 1.2)
 
+# stars
+
 s = 1
-while (s<100):
-    s = s+1
+while (s<150):
     x = randint(0, 498)
     y = randint(0, 298)
     canvas.create_rectangle(x, y, x+randint(1,3), y+randint(1,3), fill="white")
-
+    s = s+1
 
 # sun
 
