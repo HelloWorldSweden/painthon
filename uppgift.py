@@ -7,30 +7,30 @@ canvas.grid()
 
 #--------------------------- Magiska funktioner -----------------------------
 
-def _create_circle(self, x, y,r, **kwargs):
-    return self.create_oval(x-r, y-r, x+r, y+r, **kwargs)
-Canvas.create_circle = _create_circle
+def cirkel(x, y,r, **kwargs):
+    return create_oval(x-r, y-r, x+r, y+r, **kwargs)
 
-def _create_circle_arc(self, x, y, r, **kwargs):
+
+def cirkel_del(x, y, r, **kwargs):
     if "start" in kwargs and "end" in kwargs:
         kwargs["extent"] = kwargs["end"] - kwargs["start"]
         del kwargs["end"]
-    return self.create_arc(x-r, y-r, x+r, y+r, **kwargs)
-Canvas.create_circle_arc = _create_circle_arc
+    return create_arc(x-r, y-r, x+r, y+r, **kwargs)
+
 
 #--------------------------- Jobba här ---------------------------------
 # Skapa en variabel r, för radius
 
 
 # Fyll i koordinaterna x och y, samt radius för att skapa en cirkel. Välj även färg
-canvas.create_circle( , , , fill="")
+cirkel( x, y, r, fill="")
 
 #Fyll i koordinaterna x1, x2 och y1, y2. Välj även en färg.
 
-canvas.create_rectangle(, , , , fill="")
+rektangel(x1, y1, x2, y2, fill="")
 
-def circle_area(self, r):
-    return
+def cirkel_area(radius):
+    return pi*radius*radius
 
 #------------------------------------------------------------------------
 root.wm_title("Outrun")
