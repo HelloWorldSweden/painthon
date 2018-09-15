@@ -1,24 +1,4 @@
-from tkinter import *
-
-root = Tk()
-canvas = Canvas(root, width=500, height=500, borderwidth=0, highlightthickness=0, bg="white")
-canvas.grid()
-
-
-#--------------------------- Magiska funktioner -----------------------------
-
-def _create_circle(self, x, y,r, **kwargs):
-    return self.create_oval(x-r, y-r, x+r, y+r, **kwargs)
-Canvas.create_circle = _create_circle
-
-def _create_circle_arc(self, x, y, r, **kwargs):
-    if "start" in kwargs and "end" in kwargs:
-        kwargs["extent"] = kwargs["end"] - kwargs["start"]
-        del kwargs["end"]
-    return self.create_arc(x-r, y-r, x+r, y+r, **kwargs)
-Canvas.create_circle_arc = _create_circle_arc
-
-#--------------------------- Jobba med dessa ---------------------------------
+from HelloLibrary.AreaPainter import *
 
 gr = 1.618034
 
@@ -59,5 +39,4 @@ canvas.create_circle(r*7, r*5.25, r, fill="blue", outline="black")
 
 #-------------------------------------------------------------------------------
 
-root.wm_title("Twicon")
-root.mainloop()
+paint.drawPicture()

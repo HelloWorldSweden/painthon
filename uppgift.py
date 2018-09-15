@@ -1,148 +1,32 @@
-from tkinter import *
-from math import *
-root = Tk()
-canvas = Canvas(root, width=500, height=500, borderwidth=0, highlightthickness=0, bg="white")
-canvas.grid()
+from HelloLibrary.AreaPainter import *
 
 
-                                 ###################
-                                 ###################
-                                 ###################
-                                 ###################
-                                 ###################
-                                 ###################
-                                 ###################
-                                 ###################
-                                 ###################
-                                 ###################
-                  #################################################
-                     ############################################
-                         #####################################
-                              #############################
-                                 #####################
-                                    ##############
-                                        #######
-                                          ###
+#------------- Skriv dina egna funktioner här
+def circle_area(r):
+    return 100
 
-#     Skriv klart funktionerna för cirkelns area och rektengelns area.
+def rectangle_area(x1, x2, y1, y2):
+    return 100
 
-#def :
-#    return
-
-#def :
-#    return (abs(x1-x2))*(abs(y1-y2))
+paint = PaintCanvas(circle_area, rectangle_area)
+#-------------------------------------------
 
 
-
-                                          ###
-                                        #######
-                                    ##############
-                                 #####################
-                              ############################
-                         #####################################
-                     ############################################
-                  #################################################
-                                 ###################
-                                 ###################
-                                 ###################
-                                 ###################
-                                 ###################
-                                 ###################
-                                 ###################
-                                 ###################
-                                 ###################
-                                 ###################
-
-
-
-#--------------------------- Magiska funktioner -----------------------------
-
-def cirkel(x, y,r, **kwargs):
-    try:
-        canvas.create_text(x, y+r+20, text="Cirkelns area ≈ " + str(round(cirkel_area(r), 2)) + " p²", font="helvetica")
-    finally:
-        return canvas.create_oval(x-r, y-r, x+r, y+r, **kwargs)
-
-
-def cirkel_del(x, y, r, **kwargs):
-    if "start" in kwargs and "end" in kwargs:
-        kwargs["extent"] = kwargs["end"] - kwargs["start"]
-        del kwargs["end"]
-    return canvas.create_arc(x-r, y-r, x+r, y+r, **kwargs)
-
-def rektangel(x1, y1, x2, y2, **kwargs):
-    try:
-        canvas.create_text((x2-(abs(x2-x1))/2), y2 +20, text="Rektangels area = " + str(abs(rektangel_area(x1, y1, x2, y2))) + " p²", font="helvetica")
-    finally:
-        return canvas.create_rectangle(x1, y1, x2, y2)
-
-
-                                 ###################
-                                 ###################
-                                 ###################
-                                 ###################
-                                 ###################
-                                 ###################
-                                 ###################
-                                 ###################
-                                 ###################
-                                 ###################
-                  #################################################
-                     ############################################
-                         #####################################
-                              #############################
-                                 #####################
-                                    ##############
-                                        #######
-                                          ###
-                                           #
-
-#------------------------------------  Jobba här ---------------------------------
-# Skapa en variabel r, för radius
-r = 50
+#Skapa en cirkel igenom att använda funktionen:
+#   paint.cirkel(x-positon, y-positon, radie)
+radie = 50
 x = 100
 y = 100
+paint.circle(x, y, radie, fill="")
 
-
+#Skapa en rektangel igenom att använda funktionen:
+#   paint.rektangel(x1-positon, y1-positon, x2-positon, y2-positon,)
 x1 = 200
 y1 = 200
 x2 = 300
 y2 = 300
-
-# Fyll i koordinaterna x och y, samt radius för att skapa en cirkel. Välj även färg
-cirkel(x, y, r, fill="")
+paint.rectangle(x1, y1, x2, y2, fill="")
 
 
-
-
-
-#Fyll i koordinaterna x1, x2 och y1, y2. Välj även en färg.
-
-rektangel(x1, y1, x2, y2, fill="")
-
-
-
-
-                                           #
-                                          ###
-                                        #######
-                                    ##############
-                                 #####################
-                              ############################
-                         #####################################
-                     ############################################
-                  #################################################
-                                 ###################
-                                 ###################
-                                 ###################
-                                 ###################
-                                 ###################
-                                 ###################
-                                 ###################
-                                 ###################
-                                 ###################
-                                 ###################
-#------------------------------------------------------------------------
-
-root.wm_title("Outrun")
-root.mainloop()
+#----------------- Här ritar vi upp bilden
+paint.drawPicture()
