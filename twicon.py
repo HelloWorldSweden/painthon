@@ -1,40 +1,75 @@
-from HelloLibrary.AreaPainter import *
+from HelloLibrary.TwiconPainter import *
+paint = PaintTwicon()
 
-gr = 1.618034
-
+# r står för radien som är 40.
 r = 40
 
+# gs står för gyllene snittet och har värdet 1.618034
+# När vi vill ha en större cirkel multiplicerar vi radien med gyllene snittet
 
-# first big blue
-canvas.create_circle_arc(r*5, r*5, r*gr*2, fill="blue", outline="black", start=200, end=360)
-
-canvas.create_circle(r*4.5, r*4, r, fill="blue", outline="black")
-
-# wings
-canvas.create_circle(r*3.5, r*6, r*gr, fill="white", outline="black")
-
-canvas.create_circle(r*4.75, r*5.5, r*gr, fill="blue", outline="black")
-canvas.create_circle(r*3.75, r*5, r*gr, fill="white", outline="black")
-
-canvas.create_circle(r*4.75, r*5, r*gr, fill="blue", outline="black")
-canvas.create_circle(r*3.75, r*4.25, r*gr, fill="white", outline="black")
-
-canvas.create_circle(r*5, r*4.5, r*gr, fill="blue", outline="black")
-
-# big top white
-canvas.create_circle(r*6, r*2.25, r*gr*2, fill="white", outline="black")
-
-# beaks
-
-canvas.create_circle_arc(r*7.75, r*4.75, r, fill="blue", outline="black", start=200, end=360)
-canvas.create_circle(r*8.15, r*4.25, r, fill="white", outline="black")
-
-canvas.create_circle_arc(r*7.5, r*4.35, r, fill="blue", outline="black", start=200, end=360)
-canvas.create_circle(r*7.85, r*3.75, r, fill="white", outline="black")
+gs = 1.618034
 
 
-# head
-canvas.create_circle(r*7, r*5.25, r, fill="blue", outline="black")
+#---------------------- Uppgiften ------------------------
+
+# STORA BLÅ CIRKELN
+
+paint.circle_arc(r*5, r*5, r*gs*2, fill="blue", outline="", start=200, end=360)
+
+
+# Fyll i x = 180
+# Fyll i y = 160
+
+#paint.circle(, , r, fill="blue", outline="")
+
+# VINGARNA
+
+paint.circle(r*3.5, r*6, r*gs, fill="white", outline="")
+
+# Fyll i x = 190
+# Fyll i y = 220
+# Multiplicera r med gs
+
+#paint.circle(, , r, fill="blue", outline="")
+
+paint.circle(r*3.75, r*5, r*gs, fill="white", outline="")
+paint.circle(r*4.75, r*5, r*gs, fill="blue", outline="")
+paint.circle(r*3.75, r*4.25, r*gs, fill="white", outline="")
+
+# Fyll i x = 200
+# Fyll i y = 180
+# Multiplicera r med gs
+
+#paint.circle(, , r, fill="blue", outline="")
+
+# STORA VITA CIRKEL
+
+# Fyll i x = 240
+# Fyll i y = 90
+# Multiplicera r med gs och 2
+
+#paint.circle(, , r, fill="white", outline="")
+
+# NÄBBEN
+
+paint.circle_arc(r*7.75, r*4.75, r, fill="blue", outline="", start=200, end=360)
+
+paint.circle(r*8.15, r*4.25, r, fill="white", outline="")
+
+paint.circle_arc(r*7.5, r*4.35, r, fill="blue", outline="", start=200, end=360)
+
+# Fyll i x = 314
+# Fyll i y = 150
+
+#paint.circle(, , r, fill="white", outline="")
+
+
+# HUVUDET
+
+# Fyll i x = 280
+# Fyll i y = 210
+
+#paint.circle(, , r, fill="blue", outline="")
 
 
 #-------------------------------------------------------------------------------
