@@ -29,7 +29,7 @@ class PaintCanvas():
 
     def rectangle(self, x1, y1, x2, y2, **kwargs):
         self.totalArea += self.rectangleArea(x1, y1, x2, y2)
-        return self.canvas.create_rectangle(x1, y1, x2, y2)
+        return self.canvas.create_rectangle(x1, y1, x2, y2, **kwargs)
 
 
     def drawPicture(self, ):
