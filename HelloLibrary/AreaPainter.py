@@ -19,7 +19,12 @@ class PaintCanvas():
     def circle(self, x, y,r, **kwargs):
         self.totalArea += self.cirleArea(r)
         return self.canvas.create_oval(x-r, y-r, x+r, y+r, **kwargs)
+    
+    def dynamic_rectangle(self, x1, y1, x2, y2, **kwargs):
+        return self.canvas.create_line(x1, y1, x2, y2, **kwargs)
 
+    def shapy(self, array, **kwargs):
+        return self.canvas.create_polygon(array, **kwargs)
 
     def circle_arc(self, x, y, r, **kwargs):
         if "start" in kwargs and "end" in kwargs:
